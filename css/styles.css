@@ -190,10 +190,12 @@ a.custom-card:hover {
 }
 
 .lista {
-  display: subgrid;
+  display: flex;
 }
 
-
+li {
+  list-style: none;
+}
 
 .titulo {
   text-align:  center;
