@@ -4,12 +4,13 @@ function mostrarListado (listaDeAutos) {
     for (const auto of listaDeAutos.products) {
         let li = "";
         li = 
-        `<div class= "listas"
-        <li class="name">` + auto.name + `</li>
-        <li class="cost">` + auto.cost + `</li>
+        `<div class= "flex_container">
+        <div class= "listado">
+        <li class="name">` + auto.name +` -  $` + auto.cost + `</li>
         <li class= "soldCount">` + auto.soldCount + ` vendidos </li>
         <li class= "description">` + auto.description + `</li>
-        <img src="`+ auto.image +`">
+        </div>
+        <img src="`+ auto.image +`" class = "image">
         </div>`;
             
          document.getElementById("listadoDeAutos").innerHTML += li;

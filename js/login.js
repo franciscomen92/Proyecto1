@@ -6,6 +6,6 @@ boton.addEventListener("click", e=> {
     if(usuario.value == "" && contrasenia.value == "") {
         alert("Debes completar los campos requeridos...")
     } else {
-        window.location.href = "index.html"
+        window.location.href = "indexindex.html"
     }
 })

@@ -189,21 +189,90 @@ a.custom-card:hover {
   color: orange;
 }
 
+/* Todo el style de Products */
+.titulo {
+  text-align:  center;
+  margin-top: 30px;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.subtitulo {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: lighter;
+}
+
 .lista {
+  margin-top: 20px;
+}
+
+
+.flex_container {
   display: flex;
+  border: 1px solid rgb(209, 203, 203);
+  margin: 10px;
+  padding: 15px;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.listado {
+  margin-left: 15px;
+  margin-bottom: 15px;
+  justify-content: left;
+}
+
+.name {
+  font-size: 28px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.soldCount {
+  font-size: 18px ;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+
+.image {
+  max-width: 400px;
 }
 
 li {
   list-style: none;
 }
 
-.titulo {
-  text-align:  center;
-  margin-top: 10px;
+/* Desde aca Style del login */
+
+.mt-5 {
+  background-color: rgba(255, 255, 255, 0.795)
+}
+.containerLogin {
+  margin: 0 30%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.subtitulo {
-  text-align: center;
-  margin: 10px;
+.imputs {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+
 }
 
+.usuario{
+  margin: 5px;
+}
+
+.contrasenia {
+  margin: 5px;
+}
+
+.boton {
+  justify-content: center;
+  margin: 0 30%;
+}
