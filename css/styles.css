@@ -246,9 +246,6 @@ li {
 
 /* Desde aca Style del login */
 
-.mt-5 {
-  background-color: rgba(255, 255, 255, 0.795)
-}
 .containerLogin {
   margin: 0 30%;
   justify-content: center;
@@ -266,13 +263,18 @@ li {
 
 .usuario{
   margin: 5px;
+  text-align: center;
+  box-shadow: 3px 5px rgba(182, 178, 178, 0.500);
 }
 
 .contrasenia {
   margin: 5px;
+  text-align:center;
+  box-shadow: 3px 5px rgba(182, 178, 178, 0.500);
 }
 
 .boton {
   justify-content: center;
   margin: 0 30%;
+  box-shadow: 3px 5px rgba(182, 178, 178, 0.500);
 }
