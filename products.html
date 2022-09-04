@@ -30,7 +30,7 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-link" id="nombreUsuario">
           </li>
         </ul>
       </div>
@@ -39,9 +39,50 @@
   <main class="pb-5 container">
     <div class="container">
       <h2 class="titulo">Productos</h2>
-      <h3 class="subtitulo">Verás aquí todos los productos de la categoria Autos</h3>
+      <h3 class="subtitulo" id="catName"> Veras aqui todos los productos de la categoria </h3>
+      <div class="controles">
+        <div class="container">
+          <div class="row">
+            <div class="col text-end">
+              <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
+                <button type="button" class="btn-check" name="options" id="ascendente"></button>
+                <label class="btn btn-light" for="ascendente">Menor Precio</label>
+                <button type="button" class="btn-check" name="options" id="descendente"></button>
+                <label class="btn btn-light" for="descendente">Mayor Precio</label>
+                <button type="button" class="btn-check" name="options" id="relevancia" checked></button>
+                <label class="btn btn-light" for="relevancia">Más relevantes</i></label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
+              <div class="row container p-0 m-0">
+                <div class="col">
+                  <p class="font-weight-normal text-end my-2">Precio.</p>
+                </div>
+                <div class="col">
+                  <input class="form-control" type="number" placeholder="min." id="minimo">
+                </div>
+                <div class="col">
+                  <input class="form-control" type="number" placeholder="máx." id="maximo">
+                </div>
+                <div class="col-3 p-0">
+                  <div class="btn-group" role="group">
+                    <button class="btn btn-light btn-block" id="filtrar">Filtrar</button>
+                    <button class="btn btn-link btn-sm" id="limpiar">Limpiar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="list-group" id="cat-list-container">
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="lista" id="listaAutos">
-        <ul id="listadoDeAutos" class="listadoDeAutos">
+        <ul id="listadoCategorias" class="listadoDeAutos">
 
         </ul>
       </div>
@@ -68,6 +109,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/products.js"></script>
+  <script src="js/showUser.js"></script>
 </body>
 
 </html>

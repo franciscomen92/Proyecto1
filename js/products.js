@@ -1,30 +1,65 @@
-const AUTOS101_URL = "https://japceibal.github.io/emercado-api/cats_products/101.json"
+let catId = localStorage.getItem("catID");
+let categorias = PRODUCTS_URL + catId +".json";
 
-function mostrarListado (listaDeAutos) {
-    for (const auto of listaDeAutos.products) {
-        let li = "";
-        li = 
-        `<div class= "flex_container">
-        <div class= "listado">
-        <li class="name">` + auto.name +` -  $` + auto.cost + `</li>
-        <li class= "soldCount">` + auto.soldCount + ` vendidos </li>
-        <li class= "description">` + auto.description + `</li>
-        </div>
-        <img src="`+ auto.image +`" class = "image">
-        </div>`;
-            
-         document.getElementById("listadoDeAutos").innerHTML += li;
+let min = undefined;
+let max = undefined;
+
+//Agregamos a la funcion los parametros para filtrar//
+function mostrarListado (listadoCat) {
+    document.getElementById("listadoCategorias").innerHTML = "";
+    for (const cat of listadoCat.products) { 
+        if (cat.cost >= min && cat.cost <= max || min == undefined && max == undefined) 
+        {
+            let li = 
+            `<div class= "flex_container">
+            <div class= "listado">
+            <li class="name">` + cat.name +`  ` + cat.currency +`  `+ cat.cost + `</li>
+            <li class= "soldCount">` + cat.soldCount + ` vendidos </li>
+            <li class= "description">` + cat.description + `</li>
+            </div>
+            <img src="`+ cat.image +`" class = "image">
+            </div>`;
+                
+             document.getElementById("listadoCategorias").innerHTML += li;   
+        }
+      } 
     }
-}
+
 
 document.addEventListener("DOMContentLoaded", function() {
-    getJSONData(AUTOS101_URL).then(result => {
+    getJSONData(categorias).then(result => {
         if (result.status == "ok") {
-            mostrarListado(result.data);
+            arrayProductos = result.data;
+            mostrarListado(arrayProductos);
         } else {
             alert("Error al cargar los datos: " + result.data);
         }
     })
-})
+
+    //Obtenemos valores de los input converitdos en valores numeros y llamamos a la funcion mostrarListado//
+    document.getElementById("filtrar").addEventListener("click", function(){
+        max = parseInt(document.getElementById("maximo").value);
+        min = parseInt(document.getElementById("minimo").value);
+        
+        mostrarListado(arrayProductos);
+    })
+
+    //Limpiamos ambos campos imput, dejamos indefinidos los campos min y max para que se muestra la lista completa//
+    document.getElementById("limpiar").addEventListener("click", function(){
+        document.getElementById("maximo").value = "";
+        document.getElementById("minimo").value = "";
+        min = undefined;
+        max = undefined;
+        mostrarListado(arrayProductos);
+    })
+
+    document.getElementById("ascendente").addEventListener("click", function(){
+        arrayProductos.sort(function (a, b){
+            return (a.cost - b.cost);
+        });
+
+        mostrarListado(arrayListado)
+    })
+});
 
 
