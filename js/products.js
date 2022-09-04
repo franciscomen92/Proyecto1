@@ -1,4 +1,6 @@
+//Variable para traer el numero CATID del local Storage//
 let catId = localStorage.getItem("catID");
+//Variable que concatena la url con el numero de la categoria y un string .json para que cargue el objeto//
 let categorias = PRODUCTS_URL + catId +".json";
 
 let min = undefined;
@@ -52,13 +54,32 @@ document.addEventListener("DOMContentLoaded", function() {
         max = undefined;
         mostrarListado(arrayProductos);
     })
-
+    
+    //Ordena de menor a mayor precio//
     document.getElementById("ascendente").addEventListener("click", function(){
-        arrayProductos.sort(function (a, b){
+        arrayProductos.products.sort(function (a, b){
             return (a.cost - b.cost);
         });
 
-        mostrarListado(arrayListado)
+        mostrarListado(arrayProductos)
+    })
+
+    //Ordena de mayor a menor precio//
+    document.getElementById("descendente").addEventListener("click", function(){
+        arrayProductos.products.sort(function (a, b){
+            return (b.cost - a.cost);
+        });
+
+        mostrarListado(arrayProductos)
+    })
+
+    //Ordena por relevancia//
+    document.getElementById("relevancia").addEventListener("click", function(){
+        arrayProductos.products.sort(function (a, b){
+            return (b.soldCount - a.soldCount);
+        });
+
+        mostrarListado(arrayProductos)
     })
 });
 
