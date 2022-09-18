@@ -18,15 +18,20 @@
 
 <body>
   <!-- Login -->
-  <main class="mt-5">
-    <div class="containerLogin">
-     <img src="img/login.png" alt="login" class = "loginImage">
-     <div class="imputs">
-     <input type="text" class = "usuario" id="user" placeholder="Usuario">
-     <input type="password" class = "contrasenia" id="password" placeholder="Contraseña">
+  <main class="mt-5 container" id="contenedorLogin">
+    <div id="imagenLogin">
+      <img src="/img/login.png" alt="">
     </div>
-     <button type="button" class="boton" id="button"> Ingresar </button>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label" >Usuario</label>
+      <input type="text" class="form-control" aria-describedby="emailHelp" id="user">
     </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label" id="password">Contraseña</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary" id="button">Ingresar</button>
   </main>
   <footer class="text-muted">
     <div class="container">
