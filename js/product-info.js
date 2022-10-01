@@ -40,7 +40,7 @@ function mostrarInfoProduct(infoProduct) {
 
     <div class"row mb-3>
        <div class="col-4">
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div id="carouselExampleFade" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="${infoProduct.images[0]}" class="d-block w-100" alt="...">

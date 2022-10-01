@@ -25,7 +25,7 @@ function mostrarListado(listadoCat) {
     }
 }
 
-function nombreCat (listadoCat) {
+function nombreCat(listadoCat) {
     h3 = `<h3 class="subtitulo" id="catName"> Veras aqui todos los productos de la categoria ${listadoCat.catName} </h3>`
     document.getElementById("catName").innerHTML = h3;
 }
