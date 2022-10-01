@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     getJSONData(infoProduct).then(result => {
         if (result.status == "ok") {
-            arrayInfoProduct = result.data;
-            mostrarInfoProduct(arrayInfoProduct);
+            infoProduct = result.data;
+            mostrarInfoProduct(infoProduct);
         } else {
             alert("Error al cargar los datos: " + result.data);
         }
@@ -36,13 +36,59 @@ function mostrarInfoProduct(infoProduct) {
     <li id="categoriaProducto">${infoProduct.category}</li>
     <h3>Cantidad de Vendidos</h3>
     <li id="cantidadProductos">${infoProduct.soldCount}</li>
-    </div>`
+    </div>
+
+    <div class"row mb-3>
+       <div class="col-4">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="${infoProduct.images[0]}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                 <img src="${infoProduct.images[1]}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="${infoProduct.images[2]}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="${infoProduct.images[3]}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+</div>
+
+   `
     document.getElementById("productInfo").innerHTML += div;
- /* Para las imagenes hice otro for of porque son varias imagenes y podria variar segun el producto */
-    for (const imagen of infoProduct.images) {
-        let li = `<img src="${imagen}" class=class="rounded float-start" id="imagenes">`
-        document.getElementById("productImage").innerHTML += li;
+
+
+    for (const relProd of infoProduct.relatedProducts) {
+        let card = ` 
+        <div class="col-6" onclick=redirProd(${relProd.id})>
+        <div class="card">
+        <img src="${relProd.image}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">${relProd.name}</h5>
+          </div>
+        </div>
+        `
+
+        document.getElementById("productosRel").innerHTML += card;
     }
+    
+}
+
+function redirProd(idProd) {
+    localStorage.setItem("prodId", idProd);
+    window.location = "product-info.html";
 }
 
 /* Funcion que muestra los comentarios y su puntaje en estrellitas */
@@ -92,15 +138,6 @@ function mostrarComentarios(comentarios) {
         }
     document.getElementById("comentarios").innerHTML += div;      
     }
-
-    /*Intento de For para no hacer la chorrera de arriba que no me termino de funcionar*/
-   /*  let estrellas = "";
-    for (let index = 0; index < (comentarios.score); index++) {
-        estrellas = `<span class="fa fa-star checked"></span>`;  
-    }
-    for(let index = 0; index < (5 - (comentarios.score)); index ++) {
-        estrellas = `<span class="fa fa-star"></span>`; 
-    }
-    document.getElementById("comentarios").innerHTML += estrellas;  */
 }
+
 

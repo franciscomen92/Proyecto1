@@ -278,3 +278,7 @@ li {
   margin: 0 30%;
   box-shadow: 3px 5px rgba(182, 178, 178, 0.500);
 }
+
+#productosRel {
+  width: 80rem;
+}
