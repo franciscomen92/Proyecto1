@@ -286,3 +286,7 @@ li {
 .imagenCarrito {
   width: 9rem;
 }
+
+#inputCantidad {
+  width: 3rem;
+}
