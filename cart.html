@@ -49,13 +49,52 @@
           <p class="col"><b>Costo</b></p>
           <p class="col"><b>Cantidad</b></p>
           <p class="col"><b>Subtotal</b></p>
+          <hr>
         </div>
         
         <div id="productosAgregados" >
-          
-         
         </div>
         <hr>
+      </div>
+
+      <div id="formularioEnvio">
+        <hr>
+        <h3>Tipo de Envío</h3>
+        <div id="controlesEnvio">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+          <label class="form-check-label" for="flexRadioDefault1">
+          Premium 2 a 5 días (15%)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+          <label class="form-check-label" for="flexRadioDefault2">
+          Express de 5 a 8 días (7%)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+          <label class="form-check-label" for="flexRadioDefault2">
+          Standard 12 a 15 días (5%)
+          </label>
+        </div>
+      </div>
+        <h3>Dirección de Envío</h3>
+        <div id="inputsEnvio" class="row">
+          <div class="mb-3 col-6">
+            <label for="exampleFormControlInput1" class="form-label">Calle</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <div class="mb-3 col-6">
+            <label for="exampleFormControlInput1" class="form-label">Número</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <div class="mb-3 col-6">
+            <label for="exampleFormControlInput1" class="form-label">Esquina</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+          </div>
+        </div>
       </div>
     </div>
   </main>
