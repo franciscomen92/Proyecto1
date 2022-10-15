@@ -283,6 +283,7 @@ li {
   width: 80rem;
 }
 
+/* Estilos del Carrito */
 .imagenCarrito {
   width: 5rem;
 }
@@ -313,4 +314,17 @@ h3 {
 
 label {
   font-size: 20px;
+}
+
+/* Estilos de Product Info */
+.d-block {
+  width: 60rem;
+}
+
+.imagenesProductInfo {
+  margin-bottom: 3rem;
+}
+
+.descripcion {
+  margin-top: 2rem;
 }
