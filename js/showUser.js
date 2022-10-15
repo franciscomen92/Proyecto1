@@ -7,12 +7,16 @@ document.addEventListener("DOMContentLoaded", function() {
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
       <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
       <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-      <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
+      <li><a class="dropdown-item" href="index.html" id="cerrar">Cerrar sesión</a></li>
     </ul>
   </div>
   </li>`
 
     document.getElementById("nombreUsuario").innerHTML = li;
+
+    document.getElementById("cerrar").addEventListener("click", function(){
+      localStorage.removeItem("usuario");
+    })
 })
 
 
